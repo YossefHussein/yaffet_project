@@ -1,0 +1,840 @@
+{
+  "status": true,
+  "errNum": "201",
+  "msg": "There are all Prices of platinum for a period time",
+  "metal_name": "platinum",
+  "data": [
+    {
+      "id": 506,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 956,
+      "date": "2023-02-13 22:49:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 509,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 956,
+      "date": "2023-02-13 23:16:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 512,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 956,
+      "date": "2023-02-13 23:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 515,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 955,
+      "date": "2023-02-14 05:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 518,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 948,
+      "date": "2023-02-14 11:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 521,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 934,
+      "date": "2023-02-14 17:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 524,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 931,
+      "date": "2023-02-14 23:53:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 527,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 930,
+      "date": "2023-02-14 23:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 530,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 927,
+      "date": "2023-02-15 05:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 533,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 925,
+      "date": "2023-02-15 11:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 536,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 914,
+      "date": "2023-02-15 17:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 539,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 917,
+      "date": "2023-02-15 23:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 542,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 918,
+      "date": "2023-02-16 05:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 545,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 916,
+      "date": "2023-02-16 11:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 548,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 927,
+      "date": "2023-02-16 17:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 551,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 919,
+      "date": "2023-02-16 23:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 554,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 918,
+      "date": "2023-02-17 05:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 557,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 909,
+      "date": "2023-02-17 11:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 560,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 919,
+      "date": "2023-02-17 17:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 563,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 920,
+      "date": "2023-02-17 23:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 566,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 920,
+      "date": "2023-02-18 05:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 569,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 920,
+      "date": "2023-02-18 11:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 572,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 920,
+      "date": "2023-02-18 17:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 575,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 920,
+      "date": "2023-02-18 23:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 578,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 920,
+      "date": "2023-02-19 05:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 581,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 920,
+      "date": "2023-02-19 11:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 584,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 920,
+      "date": "2023-02-19 17:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 587,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 916,
+      "date": "2023-02-19 23:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 590,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 920,
+      "date": "2023-02-20 05:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 593,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 979,
+      "date": "2023-03-05 05:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 596,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 979,
+      "date": "2023-03-05 11:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 599,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 979,
+      "date": "2023-03-05 17:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 602,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 974,
+      "date": "2023-03-05 23:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 605,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 975,
+      "date": "2023-03-06 05:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 608,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 962,
+      "date": "2023-03-06 11:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 611,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 972,
+      "date": "2023-03-06 17:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 614,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 976,
+      "date": "2023-03-06 23:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 617,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 972,
+      "date": "2023-03-07 05:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 620,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 963,
+      "date": "2023-03-07 11:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 623,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 933,
+      "date": "2023-03-07 17:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 626,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 932,
+      "date": "2023-03-07 23:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 629,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 933,
+      "date": "2023-03-08 05:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 632,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 942,
+      "date": "2023-03-08 11:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 635,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 940,
+      "date": "2023-03-08 17:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 638,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 938,
+      "date": "2023-03-08 23:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 641,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 938,
+      "date": "2023-03-09 05:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 644,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 945,
+      "date": "2023-03-09 11:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 647,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 947,
+      "date": "2023-03-09 17:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 650,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 943,
+      "date": "2023-03-09 23:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 653,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 935,
+      "date": "2023-03-10 05:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 656,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 938,
+      "date": "2023-03-10 11:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 659,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 960,
+      "date": "2023-03-10 17:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 662,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 961,
+      "date": "2023-03-10 23:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 665,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 961,
+      "date": "2023-03-11 00:05:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 668,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 961,
+      "date": "2023-03-11 00:05:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 671,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 961,
+      "date": "2023-03-11 00:05:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 674,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 961,
+      "date": "2023-03-11 00:05:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 677,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 961,
+      "date": "2023-03-11 00:05:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 680,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 961,
+      "date": "2023-03-11 00:05:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 683,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 961,
+      "date": "2023-03-11 00:05:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 686,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 961,
+      "date": "2023-03-11 00:05:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 689,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 959,
+      "date": "2023-03-13 02:02:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 692,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 959,
+      "date": "2023-03-13 02:02:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 695,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 1002,
+      "date": "2023-03-13 17:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 698,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 998,
+      "date": "2023-03-13 23:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 701,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 990,
+      "date": "2023-03-14 05:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 704,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 984,
+      "date": "2023-03-14 11:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 707,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 987,
+      "date": "2023-03-14 17:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 710,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 982,
+      "date": "2023-03-14 23:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 713,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 983,
+      "date": "2023-03-15 05:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 716,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 965,
+      "date": "2023-03-15 11:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 719,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 956,
+      "date": "2023-03-15 17:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 722,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 961,
+      "date": "2023-03-15 23:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 725,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 964,
+      "date": "2023-03-16 05:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 728,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 964,
+      "date": "2023-03-16 11:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 731,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 973,
+      "date": "2023-03-16 17:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 734,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 972,
+      "date": "2023-03-16 21:15:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 737,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 982,
+      "date": "2023-03-17 05:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 740,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 990,
+      "date": "2023-03-17 11:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 743,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 974,
+      "date": "2023-03-17 17:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 746,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 975,
+      "date": "2023-03-17 23:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 749,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 975,
+      "date": "2023-03-18 05:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 752,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 975,
+      "date": "2023-03-18 11:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 755,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 975,
+      "date": "2023-03-18 17:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 758,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 975,
+      "date": "2023-03-18 23:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 761,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 975,
+      "date": "2023-03-19 05:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 764,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 975,
+      "date": "2023-03-19 11:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 767,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 975,
+      "date": "2023-03-19 17:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 770,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 973,
+      "date": "2023-03-19 23:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 773,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 973,
+      "date": "2023-03-20 05:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 776,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 988,
+      "date": "2023-03-20 11:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 779,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 1023,
+      "date": "2023-04-05 05:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 782,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 1023,
+      "date": "2023-04-05 11:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 785,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 998,
+      "date": "2023-04-05 17:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 788,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 1002,
+      "date": "2023-04-05 23:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 791,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 1003,
+      "date": "2023-04-06 05:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 794,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 1003,
+      "date": "2023-04-06 11:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 797,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 1009,
+      "date": "2023-04-06 17:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 800,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 1007,
+      "date": "2023-04-06 23:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 803,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 1007,
+      "date": "2023-04-07 05:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 806,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 1007,
+      "date": "2023-04-07 11:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 809,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 1007,
+      "date": "2023-04-07 17:58:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 812,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 1007,
+      "date": "2023-04-07 23:59:00",
+      "name": "PLATINUM"
+    },
+    {
+      "id": 815,
+      "metalName": "XPT",
+      "currency": "USD",
+      "metalPrice": 1007,
+      "date": "2023-04-08 05:59:00",
+      "name": "PLATINUM"
+    }
+  ]
+}
