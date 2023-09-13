@@ -51,7 +51,7 @@ class HomeLayout extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  pSizeboxWidth30(),
+                  PSizeboxWidth30(),
                   IconButton(
                     tooltip: 'HomeScree',
                     color: pColorIconBottomNav,
@@ -68,7 +68,7 @@ class HomeLayout extends StatelessWidget {
                       cubit.changeScreenWhenPress(1);
                     },
                   ),
-                  pSizeboxWidth35(),
+                  PSizeboxWidth35(),
                   IconButton(
                     tooltip: 'AlertsScreen',
                     color: pColorIconBottomNav,
@@ -86,7 +86,7 @@ class HomeLayout extends StatelessWidget {
                       cubit.changeScreenWhenPress(4);
                     },
                   ),
-                  pSizeboxWidth30(),
+                  PSizeboxWidth30(),
                 ],
               ),
             ),

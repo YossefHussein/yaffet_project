@@ -135,7 +135,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                                                   fontWeight: FontWeight.bold,
                                                 ),
                                               ),
-                                              pSizeboxWidth10(),
+                                              PSizeboxWidth10(),
                                               FittedBox(
                                                   child: TextButton(
                                                 onPressed: () {},
@@ -150,7 +150,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                                             ],
                                           ),
                                         ),
-                                        pSizeboxHeight10(),
+                                        PSizeboxHeight20(),
                                         FittedBox(
                                           child: Text(
                                             '1 ${AppCubit.get(context).unitSelected}/${AppCubit.get(context).currencySelected} ${DateFormat('hh:mm a').format(DateTime.now())}',
@@ -211,7 +211,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                                   ),
                                 ],
                               ),
-                              pSizeboxHeight10(),
+                              PSizeboxHeight20(),
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.baseline,
                                 textBaseline: TextBaseline.alphabetic,
@@ -226,7 +226,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                                   ),
                                   Spacer(flex: 1),
                                   FittedBox(
-                                    child: formFieldWidget(
+                                    child: FormFieldWidget(
                                       controller:
                                           cubit.weightValueMetalController,
                                       validMsg: (String? value) {
@@ -241,7 +241,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                                   ),
                                 ],
                               ),
-                              pSizeboxHeight10(),
+                              PSizeboxHeight20(),
                               // weight unit section
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -263,7 +263,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                                         color: Color(0xFFFDFDFD),
                                         borderRadius: BorderRadius.circular(5),
                                       ),
-                                      child: dropListWidget(
+                                      child: DropListWidget(
                                         context: context,
                                         value: cubit.unitSelected,
                                         items: cubit.unitMetalDropList,
@@ -275,7 +275,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                                   ),
                                 ],
                               ),
-                              pSizeboxHeight10(),
+                              PSizeboxHeight20(),
                               // gold purity section
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -295,7 +295,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                                       borderRadius: BorderRadius.circular(5),
                                     ),
                                     child: Center(
-                                      child: dropListWidget(
+                                      child: DropListWidget(
                                         context: context,
                                         value: cubit.karatSelected,
                                         items: cubit.karatGoldMetalDropList,
@@ -308,7 +308,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                                   ),
                                 ],
                               ),
-                              pSizeboxHeight10(),
+                              PSizeboxHeight20(),
                               // currency section
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -328,7 +328,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                                       borderRadius: BorderRadius.circular(5),
                                     ),
                                     child: Center(
-                                      child: dropListWidget(
+                                      child: DropListWidget(
                                         context: context,
                                         items: cubit.currencyDropList,
                                         onChange: (String? value) {
@@ -341,11 +341,11 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                                   ),
                                 ],
                               ),
-                              pSizeboxHeight10(),
+                              PSizeboxHeight20(),
                               Spacer(flex: 3),
                               Center(
                                 child: FittedBox(
-                                  child: elevatedButton(
+                                  child: ElevatedButtonWidget(
                                     width: 213,
                                     height: 27.02,
                                     name: 'Calculate',
@@ -360,7 +360,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                           ),
                         ),
                       ),
-                      pSizeboxHeight15(),
+                      PSizeboxHeight15(),
                       Container(
                         height: 220,
                         width: double.infinity,
@@ -393,7 +393,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                                     ),
                                   ),
                                 ),
-                                pSizeboxHeight15(),
+                               PSizeboxHeight15(),
                                 Expanded(
                                   child: Text(
                                     '${DateFormat.yMMMMEEEEd().format(DateTime.now())} ${DateFormat('hh:mm a').format(DateTime.now())}',
@@ -404,9 +404,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                                     textAlign: TextAlign.center,
                                   ),
                                 ),
-                                pSizeboxHeight5(),
+                                PSizeboxHeight5(),
                                 Center(
-                                  child: elevatedButton(
+                                  child: ElevatedButtonWidget(
                                     color: Color(0xffD7B582),
                                     name: 'Clean',
                                     height: 40,

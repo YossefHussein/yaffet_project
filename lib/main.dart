@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:yaffet/controllers/cubit.dart';
 import 'package:yaffet/controllers/observer.dart';
 import 'package:yaffet/controllers/states.dart';
+import 'package:yaffet/models/dio/dio_helper.dart';
 import 'package:yaffet/models/local_database/alert_database/alert_database_cubit.dart';
 import 'package:yaffet/models/local_database/depot_database/depot_database_cubit.dart';
 
@@ -15,7 +16,6 @@ import 'models/my_http_overrides.dart';
 import 'views/modules/welcome_screen.dart';
 import 'views/ui/styles/colors.dart';
 import 'views/ui/styles/sizes.dart';
-import 'models/dio/dioHelper.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

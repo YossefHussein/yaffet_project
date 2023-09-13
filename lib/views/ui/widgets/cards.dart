@@ -4,115 +4,130 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../styles/colors.dart';
 
-Widget cardWidget({
-  required String leading,
-  required String price,
-  required String unitMetal,
-  required String changePriceOfMetal,
-  required IconData icon,
-  required Color iconColor,
-  required String karat,
-}) {
-  return Container(
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(13),
-      boxShadow: const [
-        BoxShadow(
-          color: Color(0xFFDAB906),
-          spreadRadius: -3.9,
-          offset: Offset(0, 2.5),
-        ),
-      ],
-    ),
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15.sp),
+class CardWidget extends StatelessWidget {
+  
+  String leading;
+  String price;
+  String unitMetal;
+  String karat;
+  String changePriceOfMetal;
+  IconData? icon;
+  Color? iconColor;
+
+  CardWidget({
+    super.key,
+    required this.leading,
+    required this.price,
+    required this.unitMetal,
+    required this.changePriceOfMetal,
+    required this.icon,
+    required this.iconColor,
+    required this.karat,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(13),
+        boxShadow: const [
+          BoxShadow(
+            color: Color(0xFFDAB906),
+            spreadRadius: -3.9,
+            offset: Offset(0, 2.5),
+          ),
+        ],
       ),
-      // shadowColor: Color(0xffDAB906),
-      elevation: 5,
-      child: ListTile(
-        leading: Image.asset(
-          leading,
-          scale: 1.5,
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15.sp),
         ),
-        title: Text(
-          price.toUpperCase(),
-          textAlign: TextAlign.left,
-        ),
-        titleTextStyle: TextStyle(
-          fontWeight: FontWeight.w700,
-          fontSize: 20.sp,
-          wordSpacing: 5.sp,
-          color: Colors.black,
-        ),
-        subtitle: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(
-              karat.toUpperCase(),
-              style: const TextStyle(
-                color: Colors.black,
+        // shadowColor: Color(0xffDAB906),
+        elevation: 5,
+        child: ListTile(
+          leading: Image.asset(
+            leading!,
+            scale: 1.5,
+          ),
+          title: Text(
+            price.toUpperCase(),
+            textAlign: TextAlign.left,
+          ),
+          titleTextStyle: TextStyle(
+            fontWeight: FontWeight.w700,
+            fontSize: 20.sp,
+            wordSpacing: 5.sp,
+            color: Colors.black,
+          ),
+          subtitle: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                karat.toUpperCase(),
+                style: const TextStyle(
+                  color: Colors.black,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
-            ),
-            Text(
-              '/${unitMetal.toUpperCase()}',
-              style: const TextStyle(
-                color: Colors.black,
+              Text(
+                '/${unitMetal.toUpperCase()}',
+                style: const TextStyle(
+                  color: Colors.black,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-        subtitleTextStyle: TextStyle(
-          fontWeight: FontWeight.w600,
-          fontSize: 13.sp,
-        ),
-        trailing: Wrap(
-          direction: Axis.vertical,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Center(
-                  child: Text(
-                    'Change',
-                    style: TextStyle(
-                      color: pGoldColor,
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w500,
+            ],
+          ),
+          subtitleTextStyle: TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 13.sp,
+          ),
+          trailing: Wrap(
+            direction: Axis.vertical,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Center(
+                    child: Text(
+                      'Change',
+                      style: TextStyle(
+                        color: pGoldColor,
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.baseline,
-                  textBaseline: TextBaseline.alphabetic,
-                  children: [
-                    FittedBox(
-                      child: Icon(
-                        icon,
-                        color: iconColor,
-                        size: 16.sp,
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
+                      FittedBox(
+                        child: Icon(
+                          icon,
+                          color: iconColor,
+                          size: 16.sp,
+                        ),
                       ),
-                    ),
-                    Text(
-                      changePriceOfMetal,
-                      style: TextStyle(
-                        color: pTextMoveUpColor,
-                        fontSize: 15.sp,
-                        fontWeight: FontWeight.w600,
+                      Text(
+                        changePriceOfMetal,
+                        style: TextStyle(
+                          color: pTextMoveUpColor,
+                          fontSize: 15.sp,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ],
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 }

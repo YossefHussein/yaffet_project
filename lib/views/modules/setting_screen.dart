@@ -47,7 +47,7 @@ class SettingScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      pSizeboxHeight10(),
+                      PSizeboxHeight10(),
                       Responsive(
                         mobileUi: Center(
                           child: Container(
@@ -78,7 +78,7 @@ class SettingScreen extends StatelessWidget {
                                         ),
                                       ),
                                       const Spacer(),
-                                      dropListWidget(
+                                      DropListWidget(
                                         context: context,
                                         value: cubit.languageSelected,
                                         items: cubit.languageDropList,
@@ -90,7 +90,7 @@ class SettingScreen extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  pSizeboxHeight30(),
+                                  PSizeboxHeight30(),
                                   Row(
                                     children: [
                                       const Text(
@@ -101,7 +101,7 @@ class SettingScreen extends StatelessWidget {
                                         ),
                                       ),
                                       const Spacer(),
-                                      dropListWidget(
+                                      DropListWidget(
                                         context: context,
                                         value: cubit.unitSelected,
                                         items: cubit.unitMetalDropList,
@@ -111,7 +111,7 @@ class SettingScreen extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  pSizeboxHeight30(),
+                                  PSizeboxHeight30(),
                                   Row(
                                     children: [
                                       const Text(
@@ -122,7 +122,7 @@ class SettingScreen extends StatelessWidget {
                                         ),
                                       ),
                                       const Spacer(),
-                                      dropListWidget(
+                                      DropListWidget(
                                         context: context,
                                         value: cubit.karatSelected,
                                         items: cubit.karatGoldMetalDropList,
@@ -133,7 +133,7 @@ class SettingScreen extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  pSizeboxHeight30(),
+                                  PSizeboxHeight30(),
                                   Row(
                                     children: [
                                       const Text(
@@ -144,7 +144,7 @@ class SettingScreen extends StatelessWidget {
                                         ),
                                       ),
                                       const Spacer(),
-                                      dropListWidget(
+                                      DropListWidget(
                                         context: context,
                                         items: cubit.currencyDropList,
                                         onChange: (String? value) {
@@ -194,7 +194,7 @@ class SettingScreen extends StatelessWidget {
                                   pSizeboxHeight35(),
                                   // to save the sttings
                                   Center(
-                                    child: elevatedButton(
+                                    child: ElevatedButtonWidget(
                                       height: 32,
                                       width: 213,
                                       name: 'save',
@@ -237,7 +237,7 @@ class SettingScreen extends StatelessWidget {
                                         ),
                                       ),
                                       const Spacer(),
-                                      dropListWidget(
+                                      DropListWidget(
                                         context: context,
                                         value: cubit.languageSelected,
                                         items: cubit.languageDropList,
@@ -249,7 +249,7 @@ class SettingScreen extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  pSizeboxHeight30(),
+                                  PSizeboxHeight30(),
                                   Row(
                                     children: [
                                       const Text(
@@ -260,7 +260,7 @@ class SettingScreen extends StatelessWidget {
                                         ),
                                       ),
                                       const Spacer(),
-                                      dropListWidget(
+                                      DropListWidget(
                                         context: context,
                                         value: cubit.unitSelected,
                                         items: cubit.unitMetalDropList,
@@ -270,7 +270,7 @@ class SettingScreen extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  pSizeboxHeight30(),
+                                  PSizeboxHeight30(),
                                   Row(
                                     children: [
                                       const Text(
@@ -281,7 +281,7 @@ class SettingScreen extends StatelessWidget {
                                         ),
                                       ),
                                       const Spacer(),
-                                      dropListWidget(
+                                      DropListWidget(
                                         context: context,
                                         value: cubit.karatSelected,
                                         items: cubit.karatGoldMetalDropList,
@@ -292,7 +292,7 @@ class SettingScreen extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  pSizeboxHeight30(),
+                                  PSizeboxHeight30(),
                                   Row(
                                     children: [
                                       const Text(
@@ -303,7 +303,7 @@ class SettingScreen extends StatelessWidget {
                                         ),
                                       ),
                                       const Spacer(),
-                                      dropListWidget(
+                                      DropListWidget(
                                         context: context,
                                         items: cubit.currencyDropList,
                                         onChange: (String? value) {
@@ -340,7 +340,7 @@ class SettingScreen extends StatelessWidget {
                                   ),
                                   const Spacer(),
                                   Center(
-                                    child: elevatedButton(
+                                    child: ElevatedButtonWidget(
                                       height: 32,
                                       width: 213,
                                       name: 'save',

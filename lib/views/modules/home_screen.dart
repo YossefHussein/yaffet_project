@@ -206,7 +206,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                    gradientButtonWidget(
+                                    GradientButtonWidget(
                                       text: 'GOLD',
                                       gradient: LinearGradient(
                                         colors: <Color>[
@@ -232,8 +232,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                         print('gold button is pressed');
                                       },
                                     ),
-                                    pSizeboxWidth15(),
-                                    gradientButtonWidget(
+                                    PSizeboxWidth15(),
+                                    GradientButtonWidget(
                                       text: 'silver',
                                       gradient: LinearGradient(
                                         colors: <Color>[
@@ -259,7 +259,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                   ],
                                 ),
-                                pSizeboxHeight15(),
+                                PSizeboxHeight15(),
                                 FittedBox(
                                   child: Row(
                                     crossAxisAlignment:
@@ -277,7 +277,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           ),
                                         ),
                                       ),
-                                      pSizeboxWidth10(),
+                                      PSizeboxWidth10(),
                                       // time of price
                                       FittedBox(
                                         child: Text(
@@ -309,7 +309,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         Icons.arrow_upward,
                                         color: pIconColor,
                                       ),
-                                      pSizeboxWidth5(),
+                                      PSizeboxWidth5(),
                                       Text(
                                         '(0.01%)+0.17',
                                         style: TextStyle(
@@ -392,13 +392,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                 //     }
                                 //   },
                                 // ),
-                                pSizeboxHeight15(),
+                                PSizeboxHeight15(),
                                 Responsive(
                                   mobileUi: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceAround,
                                     children: [
-                                      textButtonWidget(
+                                      TextButtonWidget(
                                         title: '1d',
                                         onPressed: () {
                                           setState(() {
@@ -412,7 +412,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         },
                                         isActive: isButtonActive1D,
                                       ),
-                                      textButtonWidget(
+                                      TextButtonWidget(
                                         isActive: isButtonActive1W,
                                         title: '1w',
                                         onPressed: () {
@@ -426,7 +426,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           });
                                         },
                                       ),
-                                      textButtonWidget(
+                                      TextButtonWidget(
                                         title: '1m',
                                         isActive: isButtonActive1M,
                                         onPressed: () {
@@ -440,7 +440,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           });
                                         },
                                       ),
-                                      textButtonWidget(
+                                      TextButtonWidget(
                                         title: '6M',
                                         isActive: isButtonActive6M,
                                         onPressed: () {
@@ -454,7 +454,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           });
                                         },
                                       ),
-                                      textButtonWidget(
+                                      TextButtonWidget(
                                         title: '1y',
                                         isActive: isButtonActive1Y,
                                         onPressed: () {
@@ -468,7 +468,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           });
                                         },
                                       ),
-                                      textButtonWidget(
+                                      TextButtonWidget(
                                         isActive: isButtonActive1All,
                                         title: 'ALL',
                                         onPressed: () {
@@ -488,7 +488,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      textButtonWidget(
+                                      TextButtonWidget(
                                           height: 62,
                                           width: 64,
                                           title: '1d',
@@ -503,7 +503,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             });
                                           },
                                           isActive: isButtonActive1D),
-                                      textButtonWidget(
+                                      TextButtonWidget(
                                         height: 62,
                                         width: 64,
                                         isActive: isButtonActive1W,
@@ -519,7 +519,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           });
                                         },
                                       ),
-                                      textButtonWidget(
+                                      TextButtonWidget(
                                         height: 62,
                                         width: 64,
                                         title: '1m',
@@ -535,7 +535,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           });
                                         },
                                       ),
-                                      textButtonWidget(
+                                      TextButtonWidget(
                                         height: 62,
                                         width: 64,
                                         title: '6M',
@@ -551,7 +551,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           });
                                         },
                                       ),
-                                      textButtonWidget(
+                                      TextButtonWidget(
                                         height: 62,
                                         width: 64,
                                         title: '1Y',
@@ -567,7 +567,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           });
                                         },
                                       ),
-                                      textButtonWidget(
+                                      TextButtonWidget(
                                         height: 62,
                                         width: 64,
                                         title: 'All',
@@ -597,8 +597,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         visible: AppCubit.get(context).isCardOfGoldExist,
                         child: ConditionalBuilder(
                           condition: AppCubit.get(context).isCardOfGoldExist,
-                          builder: (context) => pSizeboxHeight25(),
-                          fallback: (context) => pSizeboxHeight25(),
+                          builder: (context) => PSizeboxHeight25(),
+                          fallback: (context) => PSizeboxHeight25(),
                         ),
                       ),
                       // when user click on silver button hide this sections
@@ -632,7 +632,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  pSizeboxHeight15(),
+                                  PSizeboxHeight15(),
                                   Text(
                                     'Metal Price',
                                     style: TextStyle(
@@ -640,8 +640,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                       fontSize: 13.sp,
                                     ),
                                   ),
-                                  pSizeboxHeight15(),
-                                  cardWidget(
+                                  PSizeboxHeight15(),
+                                  CardWidget(
                                     price: "1,900 ${cubit.currencySelected}",
                                     leading: 'assets/icons/24k.png',
                                     karat: '24K',
@@ -650,8 +650,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                     icon: Icons.arrow_upward,
                                     iconColor: pIconColor,
                                   ),
-                                  pSizeboxHeight20(height: 22),
-                                  cardWidget(
+                                  PSizeboxHeight20(height: 22),
+                                  CardWidget(
                                     price: "1,800 ${cubit.currencySelected}",
                                     leading: 'assets/icons/21k.png',
                                     karat: '21K',
@@ -660,8 +660,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                     icon: Icons.arrow_upward,
                                     iconColor: pIconColor,
                                   ),
-                                  pSizeboxHeight20(height: 22),
-                                  cardWidget(
+                                  PSizeboxHeight20(height: 22),
+                                  CardWidget(
                                     price: "1,700 ${cubit.currencySelected}",
                                     leading: 'assets/icons/18k.png',
                                     karat: '18K',
@@ -670,7 +670,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     icon: Icons.arrow_upward,
                                     iconColor: pIconColor,
                                   ),
-                                  pSizeboxHeight20(height: 22),
+                                  PSizeboxHeight20(height: 22),
                                 ],
                               ),
                             ),
@@ -678,7 +678,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       // gold or silver price performance
-                      pSizeboxHeight25(),
+                      PSizeboxHeight25(),
                       Expanded(
                         flex: 0,
                         child: Container(
@@ -716,14 +716,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                   ],
                                 ),
-                                pSizeboxHeight20(),
+                                PSizeboxHeight20(),
                                 tableTimeOPriceWidget(),
                               ],
                             ),
                           ),
                         ),
                       ),
-                      pSizeboxHeight25(),
+                      PSizeboxHeight25(),
                       // hightest price of silver
                       Expanded(
                         flex: 0,
@@ -762,7 +762,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                   ],
                                 ),
-                                pSizeboxHeight20(),
+                                PSizeboxHeight20(),
                                 tableMetalPriceWidget(),
                               ],
                             ),

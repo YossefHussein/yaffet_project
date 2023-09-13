@@ -66,8 +66,8 @@ class _DepotScreenState extends State<DepotScreen> {
                           condition: DepotDatabaseCubit.get(context)
                               .newDepotList
                               .isEmpty,
-                          builder: (BuildContext context) => pSizeboxHeight20(height: 100),
-                          fallback: (context) => pSizeboxHeight30(),
+                          builder: (BuildContext context) => PSizeboxHeight20(height: 100),
+                          fallback: (context) => PSizeboxHeight30(),
                         ), // depot items
                         depotBuilder(
                           depot: DepotDatabaseCubit.get(context).newDepotList,
@@ -77,26 +77,24 @@ class _DepotScreenState extends State<DepotScreen> {
                           condition: DepotDatabaseCubit.get(context)
                               .newDepotList
                               .isEmpty,
-                          builder: (BuildContext context) => pSizeboxHeight20(height: 100),
-                          fallback: (context) => pSizeboxHeight30(),
+                          builder: (BuildContext context) => PSizeboxHeight20(height: 100),
+                          fallback: (context) => PSizeboxHeight30(),
                         ), //
                         // this for add depot
-                        Container(
-                          child: elevatedButton(
-                            width: 213,
-                            height: 36.24,
-                            name: 'Add new depot',
-                            onPressed: () {
-                              popupDepotDialogWidget(context: context);
-                            },
-                          ),
+                        ElevatedButtonWidget(
+                          width: 213,
+                          height: 36.24,
+                          name: 'Add new depot',
+                          onPressed: () {
+                            popupDepotDialogWidget(context: context);
+                          },
                         ),
-                        pSizeboxHeight20(),
+                        PSizeboxHeight20(),
                       ],
                     ),
                   ),
                 ),
-                pSizeboxHeight15(),
+                PSizeboxHeight15(),
                 // this for see price of depot
                 ConditionalBuilder(
                   condition: cubit.newDepotList.isNotEmpty,

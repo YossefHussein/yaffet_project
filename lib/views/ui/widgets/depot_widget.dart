@@ -63,7 +63,7 @@ Widget depotItem({
                 },
                 color: Color(0xffC08832),
               ),
-              pSizeboxWidth10(width: 5),
+              PSizeboxWidth10(width: 5),
               IconButton(
                 icon: Image.asset('assets/icons/remove_icon.png'),
                 onPressed: () {
@@ -182,7 +182,7 @@ Widget depotBuilder({
 //                       ),
 //                     ),
 //                      Spacer(),
-//                     dropListWidget(
+//                     DropListWidget(
 //                       context: context,
 //                       width: width,
 //                       value: AppCubit.get(context).depotTypeSelected,
@@ -249,7 +249,7 @@ Widget depotBuilder({
 //                     ),
 //                      Spacer(),
 //                     FittedBox(
-//                       child: dropListWidget(
+//                       child: DropListWidget(
 //                         context: context,
 //                         width: width,
 //                         value: AppCubit.get(context).unitSelected,
@@ -286,7 +286,7 @@ Widget depotBuilder({
 //                       ),
 //                        Spacer(),
 //                       FittedBox(
-//                         child: dropListWidget(
+//                         child: DropListWidget(
 //                           context: context,
 //                           width: width,
 //                           value: AppCubit.get(context).karatSelected,
@@ -318,7 +318,7 @@ Widget depotBuilder({
 //                     ),
 //                      Spacer(),
 //                     FittedBox(
-//                       child: dropListWidget(
+//                       child: DropListWidget(
 //                         context: context,
 //                         width: width,
 //                         items: AppCubit.get(context).currencyDropList,
@@ -333,7 +333,7 @@ Widget depotBuilder({
 //                 ),
 //                  Spacer(),
 //                 // to add database
-//                 elevatedButton(
+//                 ElevatedButtonWidget(
 //                   width: 213,
 //                   height: 27.47,
 //                   name: 'Save',
@@ -428,7 +428,7 @@ Future popupDepotDialogWidget({
                     ),
                     Spacer(),
                     FittedBox(
-                      child: formFieldWidget(
+                      child: FormFieldWidget(
                         width: width.spMin,
                         type: TextInputType.name,
                         controller: AppCubit.get(context).nameDepotController,
@@ -452,7 +452,7 @@ Future popupDepotDialogWidget({
                     ),
                     Spacer(),
                     FittedBox(
-                      child: dropListWidget(
+                      child: DropListWidget(
                         context: context,
                         width: width.spMin,
                         value: AppCubit.get(context).depotTypeSelected,
@@ -484,7 +484,7 @@ Future popupDepotDialogWidget({
                     ),
                     // Spacer(),
                     FittedBox(
-                      child: formFieldWidget(
+                      child: FormFieldWidget(
                         width: width.spMin,
                         controller: AppCubit.get(context)
                             .weightValueDepotMetalController,
@@ -518,7 +518,7 @@ Future popupDepotDialogWidget({
                     ),
                     Spacer(),
                     FittedBox(
-                      child: dropListWidget(
+                      child: DropListWidget(
                         context: context,
                         width: width.spMin,
                         value: AppCubit.get(context).unitSelected,
@@ -548,7 +548,7 @@ Future popupDepotDialogWidget({
                     ),
                     Spacer(),
                     FittedBox(
-                      child: dropListWidget(
+                      child: DropListWidget(
                         context: context,
                         width: width.sp,
                         value: AppCubit.get(context).karatSelected,
@@ -579,7 +579,7 @@ Future popupDepotDialogWidget({
                     ),
                     Spacer(),
                     FittedBox(
-                      child: dropListWidget(
+                      child: DropListWidget(
                         context: context,
                         width: width.spMin,
                         items: AppCubit.get(context).currencyDropList,
@@ -593,7 +593,7 @@ Future popupDepotDialogWidget({
                   ],
                 ),
                 Spacer(),
-                elevatedButton(
+                ElevatedButtonWidget(
                   width: 213.sp,
                   height: 27.47.sp,
                   name: 'Save',
@@ -681,7 +681,7 @@ Future updateDepotItem({
                   ),
                 ),
                 Spacer(),
-                formFieldWidget(
+                FormFieldWidget(
                   type: TextInputType.name,
                   controller: AppCubit.get(context).nameDepotController,
                 ),
@@ -703,7 +703,7 @@ Future updateDepotItem({
                 ),
                 Spacer(),
                 FittedBox(
-                  child: dropListWidget(
+                  child: DropListWidget(
                     context: context,
                     value: AppCubit.get(context).depotTypeSelected,
                     items: AppCubit.get(context).depotTypeDropList,
@@ -733,7 +733,7 @@ Future updateDepotItem({
                 ),
                 Spacer(),
                 FittedBox(
-                  child: dropListWidget(
+                  child: DropListWidget(
                     context: context,
                     value: AppCubit.get(context).unitSelected,
                     items: AppCubit.get(context).unitMetalDropList,
@@ -762,7 +762,7 @@ Future updateDepotItem({
                 ),
                 Spacer(),
                 FittedBox(
-                  child: dropListWidget(
+                  child: DropListWidget(
                     context: context,
                     value: AppCubit.get(context).karatSelected,
                     items: AppCubit.get(context).karatGoldMetalDropList,
@@ -788,7 +788,7 @@ Future updateDepotItem({
                   ),
                 ),
                 Spacer(),
-                dropListWidget(
+                DropListWidget(
                   context: context,
                   items: AppCubit.get(context).currencyDropList,
                   onChange: (String? value) {
@@ -800,7 +800,7 @@ Future updateDepotItem({
             ),
             Spacer(),
             // to update
-            elevatedButton(
+            ElevatedButtonWidget(
               width: 213,
               height: 27.47,
               name: 'Save',
@@ -854,7 +854,7 @@ confirmDeleteMessageForDepot({
           ),
         ),
         actions: [
-          elevatedButton(
+          ElevatedButtonWidget(
             width: 116.spMin,
             height: 28.81.spMin,
             name: 'Confirm',
@@ -870,7 +870,7 @@ confirmDeleteMessageForDepot({
               );
             },
           ),
-          elevatedButton(
+          ElevatedButtonWidget(
             width: 116.spMin,
             height: 28.81.spMin,
             color: Color(0xFFD6B506),

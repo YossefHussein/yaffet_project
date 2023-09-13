@@ -57,7 +57,7 @@ Widget alertItem({
                 },
                 color: const Color(0xffC08832),
               ),
-              pSizeboxWidth10(width: 5),
+              PSizeboxWidth10(width: 5),
               IconButton(
                 icon: Image.asset('assets/icons/remove_icon.png'),
                 onPressed: () {
@@ -201,11 +201,11 @@ Future popupAlertDialogWidget(
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                pSizeboxWidth10(),
+                                PSizeboxWidth10(),
                               ],
                             ),
                           ),
-                          pSizeboxHeight10(),
+                          PSizeboxHeight10(),
                           FittedBox(
                             child: Text(
                               '1 ${AppCubit.get(context).unitSelected}/${AppCubit.get(context).currencySelected} ${DateFormat('hh:mm a').format(DateTime.now())}',
@@ -282,7 +282,7 @@ Future popupAlertDialogWidget(
                     ),
                     const Spacer(),
                     FittedBox(
-                      child: formFieldWidget(
+                      child: FormFieldWidget(
                         width: width.spMin,
                         controller: AppCubit.get(context)
                             .weightValueAlertMetalController,
@@ -316,9 +316,9 @@ Future popupAlertDialogWidget(
                     ),
                     const Spacer(),
                     FittedBox(
-                      child: dropListWidget(
+                      child: DropListWidget(
                         context: context,
-                        width: width.w,
+                        width: width.spMin,
                         value: AppCubit.get(context).unitSelected,
                         items: AppCubit.get(context).unitMetalDropList,
                         onChange: (String? value) {
@@ -349,7 +349,7 @@ Future popupAlertDialogWidget(
                       ),
                       const Spacer(),
                       FittedBox(
-                        child: dropListWidget(
+                        child: DropListWidget(
                           width: width.spMin,
                           context: context,
                           value: AppCubit.get(context).karatSelected,
@@ -379,7 +379,7 @@ Future popupAlertDialogWidget(
                     ),
                     const Spacer(),
                     FittedBox(
-                      child: dropListWidget(
+                      child: DropListWidget(
                         width: width.spMin,
                         context: context,
                         items: AppCubit.get(context).currencyDropList,
@@ -410,7 +410,7 @@ Future popupAlertDialogWidget(
                     ),
                     const Spacer(),
                     FittedBox(
-                      child: formFieldWidget(
+                      child: FormFieldWidget(
                         width: width.spMin,
                         controller: AppCubit.get(context).priceMetalController,
                         validMsg: (String? value) {
@@ -427,19 +427,12 @@ Future popupAlertDialogWidget(
                 ),
                 const Spacer(),
                 // this to add to database
-                elevatedButton(
+                ElevatedButtonWidget(
                   width: 213.spMin,
                   height: 27.47.spMin,
                   name: 'Set Alert',
                   onPressed: () {
-                    if (AppCubit.get(context)
-                            .weightValueAlertMetalController
-                            .text
-                            .isNotEmpty &&
-                        AppCubit.get(context)
-                            .priceMetalController
-                            .text
-                            .isNotEmpty) {
+                    if (AppCubit.get(context).weightValueAlertMetalController.text.isNotEmpty || AppCubit.get(context).priceMetalController.text.isNotEmpty) {
                       AlertDatabaseCubit.get(context)
                           .insertAlertDatabase(
                         isGold: AppCubit.get(context).isGoldInAlert == true
@@ -448,9 +441,7 @@ Future popupAlertDialogWidget(
                         isSilver: AppCubit.get(context).isGoldInAlert == false
                             ? 'SILVER'
                             : 'GOLD',
-                        weight: AppCubit.get(context)
-                            .weightValueAlertMetalController
-                            .text,
+                        weight: AppCubit.get(context).weightValueAlertMetalController.text,
                         price: AppCubit.get(context).priceMetalController.text,
                         unit: AppCubit.get(context).unitSelected,
                         karatGold: AppCubit.get(context).isGoldInAlert == true
@@ -459,7 +450,7 @@ Future popupAlertDialogWidget(
                         currency: AppCubit.get(context).currencySelected,
                       )
                           .then((value) {
-                        print('data inserted');
+                        print('data inserted in alert');
                       });
                       Navigator.of(context).pop();
                     } else {
@@ -525,7 +516,7 @@ Future updateAlertItem({
                   ),
                   const Spacer(),
                   FittedBox(
-                    child: formFieldWidget(
+                    child: FormFieldWidget(
                       width: width.spMin,
                       controller:
                           AppCubit.get(context).weightValueAlertMetalController,
@@ -559,7 +550,7 @@ Future updateAlertItem({
                   ),
                   const Spacer(),
                   FittedBox(
-                    child: dropListWidget(
+                    child: DropListWidget(
                       context: context,
                       width: width.spMin,
                       value: AppCubit.get(context).unitSelected,
@@ -592,7 +583,7 @@ Future updateAlertItem({
                     ),
                     const Spacer(),
                     FittedBox(
-                      child: dropListWidget(
+                      child: DropListWidget(
                         width: width.spMin,
                         context: context,
                         value: AppCubit.get(context).karatSelected,
@@ -622,7 +613,7 @@ Future updateAlertItem({
                   ),
                   const Spacer(),
                   FittedBox(
-                    child: dropListWidget(
+                    child: DropListWidget(
                       width: width.spMin,
                       context: context,
                       items: AppCubit.get(context).currencyDropList,
@@ -650,7 +641,7 @@ Future updateAlertItem({
                     ),
                   ),
                   const Spacer(),
-                  formFieldWidget(
+                  FormFieldWidget(
                     width: width.spMin,
                     controller: AppCubit.get(context).priceMetalController,
                     validMsg: (String? value) {
@@ -666,7 +657,7 @@ Future updateAlertItem({
               ),
               const Spacer(),
               // this to add to database
-              elevatedButton(
+              ElevatedButtonWidget(
                 width: 213.spMin,
                 height: 27.47.spMin,
                 name: 'Update',
@@ -734,7 +725,7 @@ confirmDeleteMessageForAlert({
           ),
         ),
         actions: [
-          elevatedButton(
+          ElevatedButtonWidget(
             width: 116.spMin,
             height: 28.81.spMin,
             name: 'Confirm',
@@ -748,7 +739,7 @@ confirmDeleteMessageForAlert({
               });
             },
           ),
-          elevatedButton(
+          ElevatedButtonWidget(
             width: 116.spMin,
             height: 28.81.spMin,
             color: const Color(0xFFD6B506),

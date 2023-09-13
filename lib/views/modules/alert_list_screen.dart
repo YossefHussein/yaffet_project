@@ -58,15 +58,15 @@ class _AlertListScreenState extends State<AlertListScreen> {
                         ),
                       ],
                     ),
-                    ConditionalBuilder(builder: (context) => pSizeboxHeight30(height: 50), condition: AlertDatabaseCubit.get(context).newAlertList.isEmpty, fallback: (context) => pSizeboxHeight10(),),
+                    ConditionalBuilder(builder: (context) => PSizeboxHeight30(height: 50), condition: AlertDatabaseCubit.get(context).newAlertList.isEmpty, fallback: (context) => PSizeboxHeight10(),),
                     // depot items
                     alertBuilder(
                       context: context,
                       alert: AlertDatabaseCubit.get(context).newAlertList,
                     ),
-                    pSizeboxHeight20(),
+                   PSizeboxHeight20(),
                     // this for add depot
-                    elevatedButton(
+                    ElevatedButtonWidget(
                       width: 213,
                       height: 36.24,
                       name: 'Add new alert',
@@ -76,8 +76,8 @@ class _AlertListScreenState extends State<AlertListScreen> {
                     ),
                     ConditionalBuilder(
                       condition: AlertDatabaseCubit.get(context).newAlertList.isEmpty,
-                      builder: (conntext) => pSizeboxHeight30(height: 145),
-                      fallback: (BuildContext context) => pSizeboxHeight30(),
+                      builder: (conntext) => PSizeboxHeight30(height: 145),
+                      fallback: (BuildContext context) => PSizeboxHeight30(),
                     ),
                   ],
                 ),

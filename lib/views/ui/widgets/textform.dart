@@ -4,21 +4,37 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../styles/colors.dart';
 
-Widget formFieldWidget({
-  required controller,
-  double height = 19.55,
-  double width = 190,
-  double borderRadius = 0,
-  String? labelText,
-  bool isPassword = false,
-  FormFieldValidator<String>? validMsg,
-  ValueChanged<String>? onSubmits,
-  ValueChanged<String>? onChanged,
-  TextInputType? type = TextInputType.number,
-}) =>
-    Container(
-      height: height.sp,
-      width: width.spMin,
+class FormFieldWidget extends StatelessWidget {
+  dynamic? controller;
+  double? height = 19.55;
+  double? width = 190;
+  double? borderRadius = 0;
+  String? labelText;
+  bool? isPassword = false;
+  FormFieldValidator<String>? validMsg;
+  ValueChanged<String>? onSubmits;
+  ValueChanged<String>? onChanged;
+  TextInputType? type = TextInputType.number;
+
+   FormFieldWidget({
+    super.key,
+    required controller,
+    this.height,
+    this.width,
+    this.borderRadius,
+    this.labelText,
+    this.isPassword,
+    this.validMsg,
+    this.onSubmits,
+    this.onChanged,
+    required this.type,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: height?.sp,
+      width: width?.spMin,
       alignment: Alignment.center,
       // padding: const EdgeInsets.symmetric(vertical: 2),
       clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -60,3 +76,5 @@ Widget formFieldWidget({
         validator: validMsg,
       ),
     );
+  }
+}
