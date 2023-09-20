@@ -2,6 +2,7 @@ import 'package:conditional_builder_null_safety/conditional_builder_null_safety.
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:text_scroll/text_scroll.dart';
+import 'package:yaffet/views/ui/styles/colors.dart';
 
 import '../../../controllers/cubit.dart';
 import '../../../models/local_database/depot_database/depot_database_cubit.dart';
@@ -22,7 +23,7 @@ Widget depotItem({
   required BuildContext context,
 }) =>
     Padding(
-      padding: EdgeInsets.all(5),
+      padding: const EdgeInsets.all(5),
       child: Container(
         height: 56.sp,
         decoration: BoxDecoration(
@@ -33,7 +34,7 @@ Widget depotItem({
           borderRadius: BorderRadius.circular(8),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             textBaseline: TextBaseline.alphabetic,
@@ -44,16 +45,16 @@ Widget depotItem({
                 // ${model['weightValue']} ${model['weightUnit']}
                 child: TextScroll(
                   '${model['name']}',
-                  delayBefore: Duration(seconds: 1),
+                  delayBefore: const Duration(seconds: 1),
                   mode: TextScrollMode.endless,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.black,
                     fontSize: 15,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
               ),
-              Spacer(
+              const Spacer(
                 flex: 1,
               ),
               IconButton(
@@ -61,7 +62,7 @@ Widget depotItem({
                 onPressed: () {
                   updateDepotItem(context: context, model: model);
                 },
-                color: Color(0xffC08832),
+                color: const Color(0xffC08832),
               ),
               PSizeboxWidth10(width: 5),
               IconButton(
@@ -69,7 +70,7 @@ Widget depotItem({
                 onPressed: () {
                   confirmDeleteMessageForDepot(context: context, model: model);
                 },
-                color: Color(0xff505F6D),
+                color: const Color(0xff505F6D),
               ),
             ],
           ),
@@ -86,7 +87,7 @@ Widget depotBuilder({
       condition: DepotDatabaseCubit.get(context).newDepotList.isNotEmpty,
       builder: (BuildContext context) => ListView.builder(
         shrinkWrap: true,
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) => depotItem(
           context: context,
           model: depot[index],
@@ -113,271 +114,6 @@ Widget depotBuilder({
       ),
     );
 
-// this pop up menu for depot
-// Future popupDepotDialogWidget(
-//   BuildContext context, {
-//   double width = 120,
-//   bool isGold = true,
-// }) =>
-//     showDialog(
-//       context: context,
-//       builder: (BuildContext context) => AlertDialog(
-//         backgroundColor: Colors.transparent,
-//         content: Container(
-//           height: 400,
-//           width: 400,
-//           padding: EdgeInsets.all(20),
-//           decoration: BoxDecoration(
-//             color: Color(0xFFF8F8F8),
-//             borderRadius: BorderRadius.circular(15),
-//             boxShadow:  [
-//               BoxShadow(
-//                 color: Color(0x3F000000),
-//                 blurRadius: 4,
-//                 offset: Offset(0, 4),
-//                 spreadRadius: 0,
-//               )
-//             ],
-//           ),
-//           child: StatefulBuilder(
-//             builder: (context, setState) => Column(
-//               mainAxisAlignment: MainAxisAlignment.start,
-//               crossAxisAlignment: CrossAxisAlignment.center,
-//               mainAxisSize: MainAxisSize.min,
-//               children: [
-//                 Row(
-//                   children: [
-//                      FittedBox(
-//                       child: Text(
-//                         'Name',
-//                         style: TextStyle(
-//                           color: Colors.black,
-//                           fontSize: 12,
-//                           fontWeight: FontWeight.w600,
-//                         ),
-//                       ),
-//                     ),
-//                      Spacer(),
-//                     FittedBox(
-//                       child: formFieldWidget(
-//                         width: width,
-//                         type: TextInputType.name,
-//                         controller: AppCubit.get(context).nameDepotController,
-//                       ),
-//                     )
-//                   ],
-//                 ),
-//                  Spacer(),
-//                 // Depot type section
-//                 Row(
-//                   children: [
-//                      FittedBox(
-//                       child: Text(
-//                         'Depot type',
-//                         style: TextStyle(
-//                           color: Colors.black,
-//                           fontSize: 12,
-//                           fontWeight: FontWeight.w600,
-//                         ),
-//                       ),
-//                     ),
-//                      Spacer(),
-//                     DropListWidget(
-//                       context: context,
-//                       width: width,
-//                       value: AppCubit.get(context).depotTypeSelected,
-//                       items: AppCubit.get(context).depotTypeDropList,
-//                       onChange: (change) {
-//                         AppCubit.get(context)
-//                             .changedDepotTypeDrop(change: change);
-//                         setState(() {
-//                           isGold = !isGold;
-//                         });
-//                       },
-//                     ),
-//                   ],
-//                 ),
-//                  Spacer(),
-//                 // value section
-//                 Row(
-//                   crossAxisAlignment: CrossAxisAlignment.baseline,
-//                   textBaseline: TextBaseline.alphabetic,
-//                   children: [
-//                      FittedBox(
-//                       child: Text(
-//                         'Weight Value',
-//                         style: TextStyle(
-//                           color: Colors.black,
-//                           fontSize: 12,
-//                           fontWeight: FontWeight.w600,
-//                         ),
-//                       ),
-//                     ),
-//                      Spacer(),
-//                     FittedBox(
-//                       child: formFieldWidget(
-//                         width: width,
-//                         controller: AppCubit.get(context)
-//                             .weightValueAlertMetalController,
-//                         validMsg: (String? value) {
-//                           if (value!.isEmpty) {
-//                             return 'sholde text form not empty';
-//                           } else {
-//                             return null;
-//                           }
-//                         },
-//                         type: TextInputType.number,
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-//                  Spacer(),
-//                 // Weight Unit section
-//                 Row(
-//                   crossAxisAlignment: CrossAxisAlignment.baseline,
-//                   textBaseline: TextBaseline.alphabetic,
-//                   children: [
-//                      FittedBox(
-//                       child: Text(
-//                         'Weight Unit',
-//                         style: TextStyle(
-//                           color: Colors.black,
-//                           fontSize: 12,
-//                           fontWeight: FontWeight.w600,
-//                         ),
-//                       ),
-//                     ),
-//                      Spacer(),
-//                     FittedBox(
-//                       child: DropListWidget(
-//                         context: context,
-//                         width: width,
-//                         value: AppCubit.get(context).unitSelected,
-//                         items: AppCubit.get(context).unitMetalDropList,
-//                         onChange: (String? value) {
-//                           AppCubit.get(context).changedUnitDrop(change: value);
-//                         },
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-//                 ConditionalBuilder(
-//                   condition: isGold == true,
-//                   builder: (BuildContext context) =>  Spacer(),
-//                   fallback: null,
-//                 ),
-//                 // Pure gold section
-//                 ConditionalBuilder(
-//                   condition: isGold == true,
-//                   fallback: null,
-//                   builder: (context) => Row(
-//                     crossAxisAlignment: CrossAxisAlignment.baseline,
-//                     textBaseline: TextBaseline.alphabetic,
-//                     children: [
-//                        FittedBox(
-//                         child: Text(
-//                           'Pure gold',
-//                           style: TextStyle(
-//                             color: Colors.black,
-//                             fontSize: 12,
-//                             fontWeight: FontWeight.w600,
-//                           ),
-//                         ),
-//                       ),
-//                        Spacer(),
-//                       FittedBox(
-//                         child: DropListWidget(
-//                           context: context,
-//                           width: width,
-//                           value: AppCubit.get(context).karatSelected,
-//                           items: AppCubit.get(context).karatGoldMetalDropList,
-//                           onChange: (String? value) {
-//                             AppCubit.get(context)
-//                                 .changeKaratUnitDrop(change: value);
-//                           },
-//                         ),
-//                       ),
-//                     ],
-//                   ),
-//                 ),
-//                  Spacer(),
-//                 // section currency
-//                 Row(
-//                   crossAxisAlignment: CrossAxisAlignment.baseline,
-//                   textBaseline: TextBaseline.alphabetic,
-//                   children: [
-//                      FittedBox(
-//                       child: Text(
-//                         'Currency',
-//                         style: TextStyle(
-//                           color: Colors.black,
-//                           fontSize: 12,
-//                           fontWeight: FontWeight.w600,
-//                         ),
-//                       ),
-//                     ),
-//                      Spacer(),
-//                     FittedBox(
-//                       child: DropListWidget(
-//                         context: context,
-//                         width: width,
-//                         items: AppCubit.get(context).currencyDropList,
-//                         onChange: (String? value) {
-//                           AppCubit.get(context)
-//                               .changedCurrencyDrop(change: value);
-//                         },
-//                         value: AppCubit.get(context).currencySelected,
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-//                  Spacer(),
-//                 // to add database
-//                 ElevatedButtonWidget(
-//                   width: 213,
-//                   height: 27.47,
-//                   name: 'Save',
-//                   onPressed: () {
-//                     if (AppCubit.get(context)
-//                         .nameDepotController
-//                         .text
-//                         .isNotEmpty) {
-//                       // DepotDatabaseCubit.get(context)
-//                       //     .insertDepotDatabase(
-//                       //   name: AppCubit.get(context).nameDepotController.text,
-//                       //   currency: AppCubit.get(context).currencySelected,
-//                       //   depotType: AppCubit.get(context).depotTypeSelected,
-//                       //   pureGold: AppCubit.get(context).karatSelected,
-//                       //   weightUnit: null,
-//                       //   weightValue: null,
-//                       // )
-//                       //     .then(
-//                       //   (value) {
-//                       //     Navigator.of(context).pop();
-//                       //   },
-//                       // );
-//                       // DepotDatabaseCubit.get(context).insertData(
-//                       //          name: AppCubit.get(context).nameDepotController.text,
-//                       //   currency: AppCubit.get(context).currencySelected,
-//                       //   depotType: AppCubit.get(context).depotTypeSelected,
-//                       //   pureGold: AppCubit.get(context).karatSelected,
-//                       //   weightUnit: null,
-//                       //   weightValue: null,
-//                       // ).then((value){
-//                       //   Navigator.pop(context);
-//                       // });
-//                     } else {
-//                       textFieldIsEmptyMessage();
-//                     }
-//                   },
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ),
-//       ),
-//     );
-
 Future popupDepotDialogWidget({
   BuildContext? context,
   double width = 190,
@@ -388,13 +124,13 @@ Future popupDepotDialogWidget({
         insetPadding: EdgeInsets.zero,
         backgroundColor: Colors.transparent,
         content: Container(
-          width: 329.spMax,
-          height: 453.spMin,
-          padding: EdgeInsets.all(20),
+          width: 345.spMax,
+          height: 363.spMin,
+          padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
-            color: Color(0xFFF8F8F8),
+            color: const Color(0xFFF8F8F8),
             borderRadius: BorderRadius.circular(15),
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 color: Color(0x3F000000),
                 blurRadius: 4,
@@ -405,14 +141,14 @@ Future popupDepotDialogWidget({
           ),
           child: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: 5.sp,
+              horizontal: 2.sp,
               vertical: 5.sp,
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               // ignore: prefer__literals_to_create_immutables
               children: [
-                Spacer(),
+                const Spacer(),
                 // this name of depot
                 Row(
                   children: [
@@ -426,7 +162,7 @@ Future popupDepotDialogWidget({
                         ),
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     FittedBox(
                       child: FormFieldWidget(
                         width: width.spMin,
@@ -436,7 +172,7 @@ Future popupDepotDialogWidget({
                     )
                   ],
                 ),
-                Spacer(),
+                const Spacer(),
                 // Depot type section
                 Row(
                   children: [
@@ -450,7 +186,7 @@ Future popupDepotDialogWidget({
                         ),
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     FittedBox(
                       child: DropListWidget(
                         context: context,
@@ -466,7 +202,7 @@ Future popupDepotDialogWidget({
                   ],
                 ),
                 // Weight value section
-                Spacer(),
+                const Spacer(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -500,7 +236,7 @@ Future popupDepotDialogWidget({
                     ),
                   ],
                 ),
-                Spacer(),
+                const Spacer(),
                 // Weight Unit section
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -516,7 +252,7 @@ Future popupDepotDialogWidget({
                         ),
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     FittedBox(
                       child: DropListWidget(
                         context: context,
@@ -530,7 +266,7 @@ Future popupDepotDialogWidget({
                     ),
                   ],
                 ),
-                Spacer(),
+                const Spacer(),
                 // Pure gold section
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -546,11 +282,11 @@ Future popupDepotDialogWidget({
                         ),
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     FittedBox(
                       child: DropListWidget(
                         context: context,
-                        width: width.sp,
+                        width: width.spMin,
                         value: AppCubit.get(context).karatSelected,
                         items: AppCubit.get(context).karatGoldMetalDropList,
                         onChange: (String? value) {
@@ -561,7 +297,7 @@ Future popupDepotDialogWidget({
                     ),
                   ],
                 ),
-                Spacer(),
+                const Spacer(),
                 // section currency
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -577,7 +313,7 @@ Future popupDepotDialogWidget({
                         ),
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     FittedBox(
                       child: DropListWidget(
                         context: context,
@@ -592,7 +328,7 @@ Future popupDepotDialogWidget({
                     ),
                   ],
                 ),
-                Spacer(),
+                const Spacer(),
                 ElevatedButtonWidget(
                   width: 213.sp,
                   height: 27.47.sp,
@@ -601,7 +337,7 @@ Future popupDepotDialogWidget({
                     if (AppCubit.get(context)
                             .nameDepotController
                             .text
-                            .isNotEmpty &&
+                            .isNotEmpty ||
                         AppCubit.get(context)
                             .weightValueDepotMetalController
                             .text
@@ -625,7 +361,7 @@ Future popupDepotDialogWidget({
                     }
                   },
                 ),
-                Spacer(),
+                const Spacer(),
               ],
             ),
           ),
@@ -646,12 +382,12 @@ Future updateDepotItem({
       insetPadding: EdgeInsets.zero,
       content: Container(
         width: 329.spMax,
-        height: 453.spMin,
-        padding: EdgeInsets.all(20),
+        height: 363.spMin,
+        padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: Color(0xFFF8F8F8),
+          color: const Color(0xFFF8F8F8),
           borderRadius: BorderRadius.circular(15),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Color(0x3F000000),
               blurRadius: 4,
@@ -666,11 +402,11 @@ Future updateDepotItem({
           mainAxisSize: MainAxisSize.min,
           // ignore: prefer__literals_to_create_immutables
           children: [
-            Spacer(),
+            const Spacer(),
             // this name of depot
             Row(
               children: [
-                FittedBox(
+                const FittedBox(
                   child: Text(
                     'Name',
                     style: TextStyle(
@@ -680,18 +416,18 @@ Future updateDepotItem({
                     ),
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 FormFieldWidget(
                   type: TextInputType.name,
                   controller: AppCubit.get(context).nameDepotController,
                 ),
               ],
             ),
-            Spacer(),
+            const Spacer(),
             // Depot type section
             Row(
               children: [
-                FittedBox(
+                const FittedBox(
                   child: Text(
                     'Depot type',
                     style: TextStyle(
@@ -701,7 +437,7 @@ Future updateDepotItem({
                     ),
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 FittedBox(
                   child: DropListWidget(
                     context: context,
@@ -715,13 +451,13 @@ Future updateDepotItem({
                 ),
               ],
             ),
-            Spacer(),
+            const Spacer(),
             // Weight Unit section
             Row(
               crossAxisAlignment: CrossAxisAlignment.baseline,
               textBaseline: TextBaseline.alphabetic,
               children: [
-                FittedBox(
+                const FittedBox(
                   child: Text(
                     'Weight Unit',
                     style: TextStyle(
@@ -731,7 +467,7 @@ Future updateDepotItem({
                     ),
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 FittedBox(
                   child: DropListWidget(
                     context: context,
@@ -744,13 +480,13 @@ Future updateDepotItem({
                 ),
               ],
             ),
-            Spacer(),
+            const Spacer(),
             // Pure gold section
             Row(
               crossAxisAlignment: CrossAxisAlignment.baseline,
               textBaseline: TextBaseline.alphabetic,
               children: [
-                FittedBox(
+                const FittedBox(
                   child: Text(
                     'Pure gold',
                     style: TextStyle(
@@ -760,7 +496,7 @@ Future updateDepotItem({
                     ),
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 FittedBox(
                   child: DropListWidget(
                     context: context,
@@ -773,13 +509,13 @@ Future updateDepotItem({
                 ),
               ],
             ),
-            Spacer(),
+            const Spacer(),
             // section currency
             Row(
               crossAxisAlignment: CrossAxisAlignment.baseline,
               textBaseline: TextBaseline.alphabetic,
               children: [
-                Text(
+                const Text(
                   'Currency',
                   style: TextStyle(
                     color: Colors.black,
@@ -787,7 +523,7 @@ Future updateDepotItem({
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 DropListWidget(
                   context: context,
                   items: AppCubit.get(context).currencyDropList,
@@ -798,7 +534,7 @@ Future updateDepotItem({
                 ),
               ],
             ),
-            Spacer(),
+            const Spacer(),
             // to update
             ElevatedButtonWidget(
               width: 213,
@@ -826,7 +562,7 @@ Future updateDepotItem({
                 }
               },
             ),
-            Spacer(),
+            const Spacer(),
           ],
         ),
       ),
@@ -873,7 +609,7 @@ confirmDeleteMessageForDepot({
           ElevatedButtonWidget(
             width: 116.spMin,
             height: 28.81.spMin,
-            color: Color(0xFFD6B506),
+            color: const Color(0xFFD6B506),
             name: 'Cancel',
             onPressed: () {
               Navigator.pop(context);
@@ -882,3 +618,139 @@ confirmDeleteMessageForDepot({
         ],
       ),
     );
+
+Widget depotContentWidget({depotContentList}) {
+  return Container(
+    height: 195.spMax,
+    width: double.infinity,
+    decoration: ShapeDecoration(
+      color: pColorContainer,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.sp),
+      ),
+      shadows: [
+        containerBoxShadow(),
+      ],
+    ),
+    child: Padding(
+      padding: EdgeInsets.all(15.sp),
+      child: Column(
+        // ignore: prefer_const_literals_to_create_immutables
+        children: [
+          Row(
+            children: [
+              Text(
+                'Total Balance',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              const Spacer(),
+              FittedBox(
+                child: Text(
+                  '0 USD',
+                  style: TextStyle(
+                    color: const Color(0xFF505F6D),
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const Spacer(),
+          Row(
+            children: [
+              Text(
+                'Gold 24k',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 13.sp,
+                  fontFamily: 'Source Sans Pro',
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const Spacer(),
+              Text(
+                '100 Grams',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ],
+          ),
+          const Spacer(),
+          Row(
+            children: [
+              Text(
+                '100 Grams',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              const Spacer(),
+              Text(
+                '100 Grams',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ],
+          ),
+          const Spacer(),
+          Row(
+            children: [
+              Text(
+                'Gold 21k',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              const Spacer(),
+              Text(
+                '1.5KG',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ],
+          ),
+          const Spacer(),
+          Row(
+            children: [
+              Text(
+                'Gold 18k',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              const Spacer(),
+              Text(
+                '1.5KG',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    ),
+  );
+}

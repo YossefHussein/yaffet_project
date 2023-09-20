@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
             create: (context) => AppCubit(),
           ),
           BlocProvider<DioCubit>(
-            create: (context) => DioCubit()..getSilverPriceHistory(),
+            create: (context) => DioCubit()..getGoldPriceHistory(),
           ),
         ],
         child: BlocConsumer<AppCubit, AppState>(

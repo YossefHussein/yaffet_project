@@ -28,35 +28,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // @override
-  // void initState() {
-  //   PriceHistoryGold.getData();
-  //   super.initState();
-  // }
-
-  // List<ChartsData> chartData = [];
-
-  // Future<String> getJsonFromRestAPI() async {
-  //   String url = "https://api.yaffet.com/public/api/prices-history?metal=silver&period=day";
-  //   http.Response response = await http.get(Uri.parse(url));
-  //   return response.body;
-  // }
-
-  // Future loadSalesData() async {
-  //   String jsonString = await getJsonFromRestAPI();
-  //   final jsonResponse = json.decode(jsonString);
-  //   setState(() {
-  //     for (Map<String, dynamic> i in jsonResponse) {
-  //       chartData.add(ChartsData.fromJson(i));
-  //     }
-  //   });
-  // }
-
-  // @override
-  // void initState() {
-  //   loadSalesData();
-  //   super.initState();
-  // }
 
   var isButtonActive1D = true;
   var isButtonActive1W = false;
@@ -107,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 left: 15.0,
                               ),
                               decoration: BoxDecoration(
-                                color: pColorDropListOfHomeScreen,
+                                color: pColorDropList,
                                 borderRadius: BorderRadius.circular(5),
                               ),
                               child: Row(
@@ -149,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 bottom: 5.0,
                               ),
                               decoration: BoxDecoration(
-                                color: pColorDropListOfHomeScreen,
+                                color: pColorDropList,
                                 boxShadow: [
                                   BoxShadow(
                                     color: Colors.black.withOpacity(0.1),
@@ -185,7 +156,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Expanded(
                         child: Container(
-                          height: 421.92.sp,
+                          height: 350.sp,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             boxShadow: [
@@ -624,10 +595,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 15,
-                                vertical: 10,
-                              ),
+                              padding: const EdgeInsets.all(15),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -692,12 +660,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.only(
-                              top: 10,
-                              bottom: 35,
-                              right: 10,
-                              left: 10,
-                            ),
+                            padding: const EdgeInsets.all(15),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -738,12 +701,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.only(
-                              top: 10,
-                              bottom: 35,
-                              right: 10,
-                              left: 10,
-                            ),
+                            padding: const EdgeInsets.all(15),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,

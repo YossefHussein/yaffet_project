@@ -5,25 +5,26 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../styles/colors.dart';
 
 class FormFieldWidget extends StatelessWidget {
+
   dynamic? controller;
-  double? height = 19.55;
-  double? width = 190;
-  double? borderRadius = 0;
+  double? height;
+  double? width;
+  double? borderRadius;
   String? labelText;
-  bool? isPassword = false;
+  bool? isPassword;
   FormFieldValidator<String>? validMsg;
   ValueChanged<String>? onSubmits;
   ValueChanged<String>? onChanged;
   TextInputType? type = TextInputType.number;
 
-   FormFieldWidget({
+  FormFieldWidget({
     super.key,
-    required controller,
-    this.height,
-    this.width,
-    this.borderRadius,
+    required this.controller,
+    this.height = 19.55,
+    this.width = 190,
+    this.borderRadius = 0,
     this.labelText,
-    this.isPassword,
+    this.isPassword = false,
     this.validMsg,
     this.onSubmits,
     this.onChanged,

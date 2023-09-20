@@ -8,7 +8,7 @@ import '../styles/colors.dart';
 class GradientButtonWidget extends StatelessWidget {
   Gradient gradient;
   double? width;
-  double? height ;
+  double? height;
   GestureTapCallback? onPressed;
   String text;
   bool? isUpperCase;
@@ -53,7 +53,6 @@ class GradientButtonWidget extends StatelessWidget {
 }
 
 class ElevatedButtonWidget extends StatelessWidget {
- 
   String? name;
   VoidCallback? onPressed;
   double height;
@@ -118,19 +117,18 @@ class ElevatedButtonWidget extends StatelessWidget {
   }
 }
 
-
 class TextButtonWidget extends StatelessWidget {
   String title;
   VoidCallback? onPressed;
-  bool isUpperCase = true;
-  double height = 32;
-  double width = 40;
-  Color? color = const Color(0xFFD7B606);
-  double paddingBottom = 9;
-  double paddingLeft = 9;
-  double paddingRight = 9;
-  double paddingTop = 7;
-  bool? isActive = false;
+  bool isUpperCase;
+  double height;
+  double width;
+  Color? color;
+  double paddingBottom;
+  double paddingLeft;
+  double paddingRight;
+  double paddingTop;
+  bool? isActive;
 
   TextButtonWidget({
     super.key,
@@ -139,7 +137,7 @@ class TextButtonWidget extends StatelessWidget {
     this.isUpperCase = true,
     this.height = 32,
     this.width = 40,
-    this.color,
+    this.color = const Color(0xFFD7B606),
     this.paddingBottom = 9,
     this.paddingLeft = 9,
     this.paddingRight = 9,

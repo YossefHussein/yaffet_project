@@ -147,10 +147,10 @@ class DepotDatabaseCubit extends Cubit<DepotDatabaseCubitState> {
 
   Future<void> updateItemDepot({
     required int id,
-    required String name,
-    required String depotType,
-    required String pureGold,
-    required String currency,
+    required String? name,
+    required String? depotType,
+    required String? pureGold,
+    required String? currency,
     required String? weightValue,
     required String? weightUnit,
   }) async {
@@ -173,4 +173,31 @@ class DepotDatabaseCubit extends Cubit<DepotDatabaseCubitState> {
       emit(AppDepotUpdateDatabaseState());
     });
   }
+
+
+  Future<void> insertedItemDepot({
+    required String? name,
+    required String? depotType,
+    required String? pureGold,
+    required String? currency,
+    required String? weightValue,
+    required String? weightUnit,
+  }) async {
+    await database.transaction((txn) async {
+      await txn.insert(
+        'yaffetDepot',
+        {
+          'name': '$name',
+          'depotType': '$depotType',
+          'pureGold': '$pureGold',
+          'currency': '$currency',
+          'weightValue': '$weightValue',
+          'weightUnit': '$weightUnit'
+        },
+      );
+      getDataFromDepotDatabase(database: database);
+      emit(AppDepotUpdateDatabaseState());
+    });
+  }
+
 }

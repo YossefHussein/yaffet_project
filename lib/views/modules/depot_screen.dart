@@ -1,7 +1,8 @@
-
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:yaffet/views/ui/styles/colors.dart';
 
 import '../../models/local_database/depot_database/depot_database_cubit.dart';
 import '../../models/local_database/depot_database/depot_database_state.dart';
@@ -24,7 +25,8 @@ class _DepotScreenState extends State<DepotScreen> {
     return BlocConsumer<DepotDatabaseCubit, DepotDatabaseCubitState>(
       listener: (BuildContext context, state) {},
       builder: (BuildContext context, state) {
-        var cubit = DepotDatabaseCubit.get(context);
+        var depotCubit = DepotDatabaseCubit.get(context);
+        var depotList = DepotDatabaseCubit.get(context).newDepotList;
         return SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Padding(
@@ -66,7 +68,8 @@ class _DepotScreenState extends State<DepotScreen> {
                           condition: DepotDatabaseCubit.get(context)
                               .newDepotList
                               .isEmpty,
-                          builder: (BuildContext context) => PSizeboxHeight20(height: 100),
+                          builder: (BuildContext context) =>
+                              PSizeboxHeight20(height: 100),
                           fallback: (context) => PSizeboxHeight30(),
                         ), // depot items
                         depotBuilder(
@@ -77,7 +80,8 @@ class _DepotScreenState extends State<DepotScreen> {
                           condition: DepotDatabaseCubit.get(context)
                               .newDepotList
                               .isEmpty,
-                          builder: (BuildContext context) => PSizeboxHeight20(height: 100),
+                          builder: (BuildContext context) =>
+                              PSizeboxHeight20(height: 100),
                           fallback: (context) => PSizeboxHeight30(),
                         ), //
                         // this for add depot
@@ -97,17 +101,16 @@ class _DepotScreenState extends State<DepotScreen> {
                 PSizeboxHeight15(),
                 // this for see price of depot
                 ConditionalBuilder(
-                  condition: cubit.newDepotList.isNotEmpty,
-                  builder: (context) => Container(
-                    height: 195,
+                  condition: depotCubit.newDepotList.isNotEmpty,
+                  builder: (context) =>
+                      depotContentWidget(depotContentList: depotList),
+                  fallback: (context) => Container(
+                    height: 195.spMax,
                     width: double.infinity,
                     decoration: ShapeDecoration(
-                      color: const Color(0xFFF8F8F8),
+                      color: pColorContainer,
                       shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                          color: Colors.black.withOpacity(0.05000000074505806),
-                        ),
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(15.sp),
                       ),
                       shadows: [
                         containerBoxShadow(),
@@ -115,150 +118,80 @@ class _DepotScreenState extends State<DepotScreen> {
                     ),
                     // ignore: prefer_const_constructors
                     child: Padding(
-                      padding: const EdgeInsets.all(15),
+                      padding: EdgeInsets.all(15.sp),
                       // ignore: prefer_const_constructors
                       child: Column(
-                        // ignore: prefer_const_literals_to_create_immutables
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Row(
+                          Row(
                             children: [
                               Text(
                                 'Total Balance',
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 15,
+                                  fontSize: 13.sp,
                                   fontWeight: FontWeight.w700,
                                 ),
                               ),
-                              Spacer(),
+                              const Spacer(),
                               Text(
-                                '1555 USD',
+                                '0 USD',
                                 style: TextStyle(
-                                  color: Color(0xFF505F6D),
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w700,
+                                  color: const Color(0xFF505F6D),
+                                  fontSize: 18.sp,
+                                  fontWeight: FontWeight.w900,
                                 ),
                               ),
                             ],
                           ),
-                          const Spacer(),
-                          const Row(
+                          PSizeboxHeight15(),
+                          Row(
                             children: [
                               Text(
                                 'Gold 24k',
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 15,
+                                  fontSize: 13.sp,
                                   fontFamily: 'Source Sans Pro',
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
-                              Spacer(),
+                              const Spacer(),
                               Text(
-                                '100 Grams',
+                                '0 Grams',
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 15,
+                                  fontSize: 13.sp,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                            ],
+                          ),
+                          PSizeboxHeight10(),
+                          Row(
+                            children: [
+                              Text(
+                                'Silver',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 13.sp,
+                                  fontFamily: 'Source Sans Pro',
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              const Spacer(),
+                              Text(
+                                '0 Grams',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 13.sp,
                                   fontWeight: FontWeight.w700,
                                 ),
                               ),
                             ],
                           ),
                           const Spacer(),
-                          const Row(
-                            children: [
-                              Text(
-                                '100 Grams',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                              Spacer(),
-                              Text(
-                                '100 Grams',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                            ],
-                          ),
-                          const Spacer(),
-                          const Row(
-                            children: [
-                              Text(
-                                'Gold 21k',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                              Spacer(),
-                              Text(
-                                '1.5KG',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                            ],
-                          ),
-                          const Spacer(),
-                          const Row(
-                            children: [
-                              Text(
-                                'Gold 18k',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                              Spacer(),
-                              Text(
-                                '1.5KG',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  fallback: (context) => Container(
-                    height: 195,
-                    width: double.infinity,
-                    decoration: ShapeDecoration(
-                      color: const Color(0xFFF8F8F8),
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                          color: Colors.black.withOpacity(0.05000000074505806),
-                        ),
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      shadows: [
-                        containerBoxShadow(),
-                      ],
-                    ),
-                    // ignore: prefer_const_constructors
-                    child: Padding(
-                      padding: const EdgeInsets.all(15),
-                      // ignore: prefer_const_constructors
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        // ignore: prefer_const_literals_to_create_immutables
-                        children: [
-                          const Text('no data inserted'),
                         ],
                       ),
                     ),

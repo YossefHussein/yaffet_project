@@ -42,7 +42,7 @@ Widget alertItem({
                 flex: 3,
                 child: Text(
                   // ${model['karatGold'] == null ? '${model['karatGold']}' : ''}
-                  '${AppCubit.get(context).isGoldInAlert ? model['isGold'] : model['isSilver']} ${model['price']} ${model['currency']}',
+                  '${AppCubit.get(context).isGoldInAlert ? model['isGold'] : model['isSilver']} ${model['price']}${model['currency']}',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 15.spMin,
@@ -113,7 +113,7 @@ Future popupAlertDialogWidget(
       insetPadding: EdgeInsets.zero,
       content: StatefulBuilder(
         builder: (context, setState) => Container(
-          width: 329.spMax,
+          width: 345.spMax,
           height: 453.spMin,
           padding: EdgeInsets.all(20.spMin),
           decoration: BoxDecoration(
@@ -129,9 +129,9 @@ Future popupAlertDialogWidget(
             ],
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 5,
-              vertical: 5,
+            padding: EdgeInsets.symmetric(
+              horizontal: 2.sp,
+              vertical: 5.sp,
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -275,7 +275,7 @@ Future popupAlertDialogWidget(
                         'Weight Value',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 12.spMin,
+                          fontSize: 12.sp,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -286,13 +286,6 @@ Future popupAlertDialogWidget(
                         width: width.spMin,
                         controller: AppCubit.get(context)
                             .weightValueAlertMetalController,
-                        validMsg: (String? value) {
-                          if (value!.isEmpty) {
-                            return 'shoulde text form not empty';
-                          } else {
-                            return null;
-                          }
-                        },
                         type: TextInputType.number,
                       ),
                     ),
@@ -432,7 +425,14 @@ Future popupAlertDialogWidget(
                   height: 27.47.spMin,
                   name: 'Set Alert',
                   onPressed: () {
-                    if (AppCubit.get(context).weightValueAlertMetalController.text.isNotEmpty || AppCubit.get(context).priceMetalController.text.isNotEmpty) {
+                    if (AppCubit.get(context)
+                            .weightValueAlertMetalController
+                            .text
+                            .isNotEmpty ||
+                        AppCubit.get(context)
+                            .priceMetalController
+                            .text
+                            .isNotEmpty) {
                       AlertDatabaseCubit.get(context)
                           .insertAlertDatabase(
                         isGold: AppCubit.get(context).isGoldInAlert == true
@@ -441,7 +441,9 @@ Future popupAlertDialogWidget(
                         isSilver: AppCubit.get(context).isGoldInAlert == false
                             ? 'SILVER'
                             : 'GOLD',
-                        weight: AppCubit.get(context).weightValueAlertMetalController.text,
+                        weight: AppCubit.get(context)
+                            .weightValueAlertMetalController
+                            .text,
                         price: AppCubit.get(context).priceMetalController.text,
                         unit: AppCubit.get(context).unitSelected,
                         karatGold: AppCubit.get(context).isGoldInAlert == true
@@ -453,6 +455,12 @@ Future popupAlertDialogWidget(
                         print('data inserted in alert');
                       });
                       Navigator.of(context).pop();
+                      setState(() {
+                        AppCubit.get(context)
+                            .weightValueAlertMetalController
+                            .clear();
+                        AppCubit.get(context).priceMetalController.clear();
+                      });
                     } else {
                       // if the text form empty
                       textFieldIsEmptyMessage();
@@ -480,101 +488,132 @@ Future updateAlertItem({
       builder: (context) => AlertDialog(
         insetPadding: EdgeInsets.zero,
         backgroundColor: Colors.transparent,
-        content: Container(
-          width: 329.spMax,
-          height: 453.spMin,
-          padding: const EdgeInsets.all(20),
-          decoration: BoxDecoration(
-            color: const Color(0xFFF8F8F8),
-            borderRadius: BorderRadius.circular(15),
-            boxShadow: const [
-              BoxShadow(
-                color: Color(0x3F000000),
-                blurRadius: 4,
-                offset: Offset(0, 4),
-                spreadRadius: 0,
-              )
-            ],
-          ),
-          child: Column(
-            children: [
-              const Spacer(),
-              // weight value section
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.baseline,
-                textBaseline: TextBaseline.alphabetic,
-                children: [
-                  FittedBox(
-                    child: Text(
-                      'Weight Value',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 12.spMin,
-                        fontWeight: FontWeight.w600,
+        content: StatefulBuilder(
+          builder: (context, setState) => Container(
+            width: 345.spMax,
+            height: 453.spMin,
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: const Color(0xFFF8F8F8),
+              borderRadius: BorderRadius.circular(15),
+              boxShadow: const [
+                BoxShadow(
+                  color: Color(0x3F000000),
+                  blurRadius: 4,
+                  offset: Offset(0, 4),
+                  spreadRadius: 0,
+                )
+              ],
+            ),
+            child: Column(
+              children: [
+                const Spacer(),
+                // weight value section
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.baseline,
+                  textBaseline: TextBaseline.alphabetic,
+                  children: [
+                    FittedBox(
+                      child: Text(
+                        'Weight Value',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 12.spMin,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
-                  ),
-                  const Spacer(),
-                  FittedBox(
-                    child: FormFieldWidget(
-                      width: width.spMin,
-                      controller:
-                          AppCubit.get(context).weightValueAlertMetalController,
-                      validMsg: (String? value) {
-                        if (value!.isEmpty) {
-                          return 'sholde text form not empty';
-                        } else {
-                          return null;
-                        }
-                      },
-                      type: TextInputType.number,
-                    ),
-                  ),
-                ],
-              ),
-              const Spacer(),
-              // weight unit section
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.baseline,
-                textBaseline: TextBaseline.alphabetic,
-                children: [
-                  FittedBox(
-                    child: Text(
-                      'Weight Unit',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 12.spMin,
-                        fontWeight: FontWeight.w600,
+                    const Spacer(),
+                    FittedBox(
+                      child: FormFieldWidget(
+                        width: width.spMin,
+                        controller: AppCubit.get(context)
+                            .weightValueAlertMetalController,
+                        validMsg: (String? value) {
+                          if (value!.isEmpty) {
+                            return 'sholde text form not empty';
+                          } else {
+                            return null;
+                          }
+                        },
+                        type: TextInputType.number,
                       ),
                     ),
-                  ),
-                  const Spacer(),
-                  FittedBox(
-                    child: DropListWidget(
-                      context: context,
-                      width: width.spMin,
-                      value: AppCubit.get(context).unitSelected,
-                      items: AppCubit.get(context).unitMetalDropList,
-                      onChange: (String? value) {
-                        AppCubit.get(context).changedUnitDrop(change: value);
-                      },
+                  ],
+                ),
+                const Spacer(),
+                // weight unit section
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.baseline,
+                  textBaseline: TextBaseline.alphabetic,
+                  children: [
+                    FittedBox(
+                      child: Text(
+                        'Weight Unit',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 12.spMin,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
                     ),
+                    const Spacer(),
+                    FittedBox(
+                      child: DropListWidget(
+                        context: context,
+                        width: width.spMin,
+                        value: AppCubit.get(context).unitSelected,
+                        items: AppCubit.get(context).unitMetalDropList,
+                        onChange: (String? value) {
+                          AppCubit.get(context).changedUnitDrop(change: value);
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+                Visibility(
+                  visible: AppCubit.get(context).isGoldInAlert == true,
+                  child: const Spacer(),
+                ),
+                // gold purity section
+                Visibility(
+                  visible: AppCubit.get(context).isGoldInAlert == true,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
+                      Text(
+                        'Gold Purity',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 12.spMin,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      const Spacer(),
+                      FittedBox(
+                        child: DropListWidget(
+                          width: width.spMin,
+                          context: context,
+                          value: AppCubit.get(context).karatSelected,
+                          items: AppCubit.get(context).karatGoldMetalDropList,
+                          onChange: (String? value) {
+                            AppCubit.get(context)
+                                .changeKaratUnitDrop(change: value);
+                          },
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-              Visibility(
-                visible: AppCubit.get(context).isGoldInAlert == true,
-                child: const Spacer(),
-              ),
-              // gold purity section
-              Visibility(
-                visible: AppCubit.get(context).isGoldInAlert == true,
-                child: Row(
+                ),
+                const Spacer(),
+                // currency section
+                Row(
                   crossAxisAlignment: CrossAxisAlignment.baseline,
                   textBaseline: TextBaseline.alphabetic,
                   children: [
                     Text(
-                      'Gold Purity',
+                      'Currency',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 12.spMin,
@@ -586,120 +625,97 @@ Future updateAlertItem({
                       child: DropListWidget(
                         width: width.spMin,
                         context: context,
-                        value: AppCubit.get(context).karatSelected,
-                        items: AppCubit.get(context).karatGoldMetalDropList,
+                        items: AppCubit.get(context).currencyDropList,
                         onChange: (String? value) {
                           AppCubit.get(context)
-                              .changeKaratUnitDrop(change: value);
+                              .changedCurrencyDrop(change: value);
                         },
+                        value: AppCubit.get(context).currencySelected,
                       ),
                     ),
                   ],
                 ),
-              ),
-              const Spacer(),
-              // currency section
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.baseline,
-                textBaseline: TextBaseline.alphabetic,
-                children: [
-                  Text(
-                    'Currency',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 12.spMin,
-                      fontWeight: FontWeight.w600,
+                const Spacer(),
+                // price section
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.baseline,
+                  textBaseline: TextBaseline.alphabetic,
+                  children: [
+                    Text(
+                      'Price',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 12.spMin,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
-                  ),
-                  const Spacer(),
-                  FittedBox(
-                    child: DropListWidget(
+                    const Spacer(),
+                    FormFieldWidget(
                       width: width.spMin,
-                      context: context,
-                      items: AppCubit.get(context).currencyDropList,
-                      onChange: (String? value) {
-                        AppCubit.get(context)
-                            .changedCurrencyDrop(change: value);
+                      controller: AppCubit.get(context).priceMetalController,
+                      validMsg: (String? value) {
+                        if (value!.isEmpty) {
+                          return 'sholde text form not empty';
+                        } else {
+                          return null;
+                        }
                       },
-                      value: AppCubit.get(context).currencySelected,
+                      type: TextInputType.number,
                     ),
-                  ),
-                ],
-              ),
-              const Spacer(),
-              // price section
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.baseline,
-                textBaseline: TextBaseline.alphabetic,
-                children: [
-                  Text(
-                    'Price',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 12.spMin,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  const Spacer(),
-                  FormFieldWidget(
-                    width: width.spMin,
-                    controller: AppCubit.get(context).priceMetalController,
-                    validMsg: (String? value) {
-                      if (value!.isEmpty) {
-                        return 'sholde text form not empty';
-                      } else {
-                        return null;
-                      }
-                    },
-                    type: TextInputType.number,
-                  ),
-                ],
-              ),
-              const Spacer(),
-              // this to add to database
-              ElevatedButtonWidget(
-                width: 213.spMin,
-                height: 27.47.spMin,
-                name: 'Update',
-                onPressed: () {
-                  if (AppCubit.get(context)
-                          .weightValueAlertMetalController
-                          .text
-                          .isNotEmpty &&
-                      AppCubit.get(context)
-                          .priceMetalController
-                          .text
-                          .isNotEmpty) {
-                    AlertDatabaseCubit.get(context)
-                        .updateItemAlert(
-                      id: model['id'],
-                      isGold: AppCubit.get(context).isGoldInAlert == true
-                          ? 'GOLD'
-                          : 'SILVER',
-                      isSilver: AppCubit.get(context).isGoldInAlert == false
-                          ? 'SILVER'
-                          : 'GOLD',
-                      weight: AppCubit.get(context)
-                          .weightValueAlertMetalController
-                          .text,
-                      price: AppCubit.get(context).priceMetalController.text,
-                      unit: AppCubit.get(context).unitSelected,
-                      karatGold: AppCubit.get(context).isGoldInAlert == true
-                          ? AppCubit.get(context).karatSelected
-                          : null,
-                      currency: AppCubit.get(context).currencySelected,
-                    )
-                        .then((value) {
-                      print('data updated');
-                    });
-                    Navigator.of(context).pop();
-                  } else {
-                    // if the text form empty
-                    textFieldIsEmptyMessage();
-                  }
-                },
-              ),
-            ],
+                  ],
+                ),
+                const Spacer(),
+                // this to add to database
+                ElevatedButtonWidget(
+                  width: 213.spMin,
+                  height: 27.47.spMin,
+                  name: 'Update',
+                  onPressed: () {
+                    if (AppCubit.get(context)
+                            .weightValueAlertMetalController
+                            .text
+                            .isNotEmpty &&
+                        AppCubit.get(context)
+                            .priceMetalController
+                            .text
+                            .isNotEmpty) {
+                      AlertDatabaseCubit.get(context)
+                          .updateItemAlert(
+                        id: model['id'],
+                        isGold: AppCubit.get(context).isGoldInAlert == true
+                            ? 'GOLD'
+                            : 'SILVER',
+                        isSilver: AppCubit.get(context).isGoldInAlert == false
+                            ? 'SILVER'
+                            : 'GOLD',
+                        weight: AppCubit.get(context)
+                            .weightValueAlertMetalController
+                            .text,
+                        price: AppCubit.get(context).priceMetalController.text,
+                        unit: AppCubit.get(context).unitSelected,
+                        karatGold: AppCubit.get(context).isGoldInAlert == true
+                            ? AppCubit.get(context).karatSelected
+                            : null,
+                        currency: AppCubit.get(context).currencySelected,
+                      )
+                          .then((value) {
+                        print('data updated');
+                      });
+                      Navigator.of(context).pop();
+                      setState(() {
+                        AppCubit.get(context)
+                            .weightValueAlertMetalController
+                            .clear();
+                        AppCubit.get(context).priceMetalController.clear();
+                      });
+                    } else {
+                      // if the text form empty
+                      textFieldIsEmptyMessage();
+                    }
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -713,7 +729,6 @@ confirmDeleteMessageForAlert({
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        // insetPadding: EdgeInsets.zero,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderSizeOfDeledMessage.spMin),
         ),

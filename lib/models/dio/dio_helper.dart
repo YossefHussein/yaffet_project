@@ -6,23 +6,24 @@ class DioHelper {
   static init() async {
     dio = Dio(
       BaseOptions(
-        baseUrl: 'https://metals-api.com',
+        baseUrl: 'https://live-metal-prices.p.rapidapi.com',
         receiveDataWhenStatusError: true,
       ),
     );
   }
 
-
   static Future<Response?> getData({
-   required  String url,
-     Map<String, dynamic>? query,
+    required String url,
+    Map<String, dynamic>? query,
   }) async {
     return await dio
         ?.get(
       url,
       queryParameters: query,
-    )
-        .then((value) {
+      options: Options(
+        validateStatus: (_) => true,
+      ),
+    ).then((value) {
       if (value.statusCode == 200) {
         print(value.toString());
       } else if (value.statusCode == 405) {
@@ -33,5 +34,4 @@ class DioHelper {
       print('api have error ${onError.toString()}');
     });
   }
-
 }

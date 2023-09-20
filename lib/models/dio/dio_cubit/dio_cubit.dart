@@ -4,32 +4,29 @@ import '../dio_helper.dart';
 import 'dio_state.dart';
 
 class DioCubit extends Cubit<DioState> {
-  DioCubit({this.dateSilver, this.metalPriceSilver}) : super(DioInitial());
+  DioCubit() : super(DioInitial());
 
   static DioCubit get(BuildContext context) => BlocProvider.of(context);
 
-  List<dynamic> silverHistoryPriceList = [];
-  double? metalPriceSilver;
-  String? dateSilver;
+  var apiLink = "https://live-metal-prices.p.rapidapi.com/v1/latest/XAU/USD";
 
-  void getSilverPriceHistory() {
-    if (silverHistoryPriceList.isEmpty) {
-      emit(GetSilverPriceHistoryLoadingState());
-      // https://api.yaffet.com/public/api/prices-history?metal=silver&period=day
-      DioHelper.getData(
-        url: '/latestPost',
-        query: {
-          'metal': 'silver',
-          'period': 'day',
-        },
-      ).then((value) {
-        
-      }).catchError((error) {
-        print('this is error ${error.toString()}');
-        emit(GetSilverPriceHistoryErrorState(error: error.toString()));
-      });
-    } else {
+  List<Map> goldList = [];
+
+  void getGoldPriceHistory() {
+    emit(GetSilverPriceHistoryLoadingState());
+    DioHelper.getData(
+      url: '$apiLink',
+      query: {
+        "X-RapidAPI-Key": "2ed3be859fmsh4d3672f688e2b14p149dd2jsne26750cf1877",
+        "X-RapidAPI-Host": "live-metal-prices.p.rapidapi.com"
+      },
+    ).then((value) {
+      value?.data = goldList;
       emit(GetSilverPriceHistoryCompleteState());
-    }
+      print("contednt data of respone (${goldList}) ");
+    }).catchError((error) {
+      print('this is error ${error.toString()}');
+      emit(GetSilverPriceHistoryErrorState(error: error.toString()));
+    });
   }
 }
